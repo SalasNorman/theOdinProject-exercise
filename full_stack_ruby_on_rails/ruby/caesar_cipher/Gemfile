@@ -6,4 +6,5 @@ gem "rubocop-performance", require: false
 
 group :development, :test do
   gem "rubocop", require: false
+  gem "rspec"  , require: false
 end
