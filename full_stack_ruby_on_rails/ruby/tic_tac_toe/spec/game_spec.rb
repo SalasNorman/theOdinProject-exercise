@@ -35,4 +35,27 @@ RSpec.describe Game do
       expect(game.game_over).to be true
     end
   end
+
+  describe '#play_turn with doubles' do
+    it 'queries player, updates board and then asks computer' do
+      player_double = double('Player', symbol: 'O', get_move: 1)
+      computer_double = double('Computer', symbol: 'X', get_move: 5)
+      board_double = double('Board')
+
+      allow(board_double).to receive(:valid_move?).with(1).and_return(true)
+      allow(board_double).to receive(:update)
+      allow(board_double).to receive(:full?).and_return(false)
+
+      allow(game).to receive(:board).and_return(board_double)
+      allow(game).to receive(:player).and_return(player_double)
+      allow(game).to receive(:computer).and_return(computer_double)
+      allow(game).to receive(:check_winner).and_return(false)
+
+      result = game.play_turn
+
+      expect(board_double).to have_received(:update).with(1, 'O')
+      expect(board_double).to have_received(:update).with(5, 'X')
+      expect(result).to eq(false)
+    end
+  end
 end

@@ -57,6 +57,8 @@ Start by writing a failing example in one of the spec files (or create a new one
 
 The existing examples demonstrate typical assertions for object state, output capture, and random behaviour.
 
+You can also take advantage of **mocks and doubles** to isolate a unit of behaviour and assert that it interacts correctly with collaborators. For instance, when testing `Game#play_turn` you might substitute the real `Board`, `Player`, and `Computer` with test doubles that respond to the minimal API you need and record messages sent to them. This lets you verify that the game asks the player for a move, updates the board with the correct symbols, and invokes the computer only after the player’s turn, all without exercising the full board implementation.
+
 ## Live Demo
 
 No live demo available.
