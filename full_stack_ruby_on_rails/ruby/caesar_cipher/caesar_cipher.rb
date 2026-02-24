@@ -27,5 +27,4 @@ puts caesar_cipher("Hello World", 3)
 puts caesar_cipher("What a string!", 5)
 # Bmfy f xywnsl!
 
-puts caesar_cipher("Like you")
-puts "Hello"
+puts caesar_cipher("Like you", 2)
