@@ -7,6 +7,6 @@ class Player
   end
 
   def get_move
-    gets.chomp.to_i
+    STDIN.gets.chomp.to_i
   end
 end

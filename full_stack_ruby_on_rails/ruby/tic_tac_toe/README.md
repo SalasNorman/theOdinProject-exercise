@@ -36,6 +36,27 @@ ruby main.rb
 
 Follow on-screen prompts to enter a move (1-9).
 
+## Test‑Driven Development (TDD) 🧪
+
+This project was developed using an RSpec‑based TDD workflow. A full test suite lives in the `spec/` directory and covers core behaviour of the board, player, computer, and game logic.
+
+To run the tests:
+
+```bash
+cd tic_tac_toe
+bundle exec rspec
+```
+
+Start by writing a failing example in one of the spec files (or create a new one), then implement the minimal code in `lib/` or elsewhere to make the test pass. Repeat the cycle and refactor with confidence since the suite will catch regressions.
+
+### Writing New Tests
+
+- Load helpers with `require_relative 'spec_helper'` at the top of each spec.
+- Use `describe` / `context` blocks to group related examples.
+- Stub user input (`allow($stdin).to receive(:gets).and_return("3\n")`) when testing interactive methods.
+
+The existing examples demonstrate typical assertions for object state, output capture, and random behaviour.
+
 ## Live Demo
 
 No live demo available.
@@ -51,7 +72,7 @@ When you run the game, the output looks like this (player input shown after prom
 ----------
 7 | 8 | 9
 
-Player Input: 
+Player Input:
 1
 
 O | 2 | 3
@@ -60,7 +81,7 @@ O | 2 | 3
 ----------
 7 | 8 | 9
 
-Player Input: 
+Player Input:
 2
 
 O | O | 3
@@ -69,7 +90,7 @@ O | O | 3
 ----------
 7 | 8 | X
 
-Player Input: 
+Player Input:
 3
 O | O | O
 ----------
