@@ -37,7 +37,7 @@ ruby main.rb
 
 Follow on-screen prompts to enter a column number (1–7).
 
-## Test‑Driven Development (TDD) 🧪
+## Test‑Driven Development (TDD)
 
 This project was developed using an RSpec‑based TDD workflow. A full test suite lives in the `spec/` directory and covers core behaviour of the board, player, computer, checker, and game logic.
 
